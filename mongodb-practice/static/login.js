@@ -11,7 +11,7 @@ async function registerFunction(e){
     const username = document.getElementById('username-id').value
     const password = document.getElementById('password-id').value
     
-    const result =  await fetch('/api/register',{
+    const result =  await fetch('/api/login',{
         method:'POST',
         headers:{
             'Content-Type':'application/json'
@@ -26,7 +26,7 @@ async function registerFunction(e){
         console.log(error)
     }) 
 
-    if(result.status == 'ok'){
+    if(result.status === 'ok'){
        alert('success')     
        localStorage.setItem(result.data)
        console.log(result.data)
